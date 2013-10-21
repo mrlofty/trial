@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @teacher.name %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @teacher.subject %>
+</p>
+
+<p>
+  <strong>Yearlvl:</strong>
+  <%= @teacher.yearlvl %>
+</p>
+
+ <h2>Students</h2>
+
+<br><br>
+<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+<%= link_to 'Back', teachers_path %>
+
+
+
+<%= form_for [@teacher, Student.new] do |f| %>
+        <p>
+                <%= f.label :name, "New Student Name" %><br/>
+                <%= f.text_area :name %>
+
+				<%= f.label :yearlvl, "Year Level" %><br/>
+                <%= f.text_area :yearlvl %>
+
+                <%= f.label :grade, "Grade" %><br/>
+                <%= f.text_area :grade %>
+
+        </p>
+        <p><%= f.submit "Add student" %></p>
+<% end %>

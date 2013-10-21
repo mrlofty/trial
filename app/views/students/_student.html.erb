@@ -1,0 +1,11 @@
+
+
+<%= div_for student do %>
+        <p>
+                <strong>
+                        Posted <%= time_ago_in_words(student.created_at) %> ago
+                </strong>
+                <br/>
+                <%= student.name %>
+        </p>
+<% end %>
