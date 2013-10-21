@@ -1,3 +1,3 @@
 class Student < ActiveRecord::Base
-  belongs_to :teachers
+  belongs_to :teacher
 end
